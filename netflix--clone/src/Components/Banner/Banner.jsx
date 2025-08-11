@@ -11,7 +11,7 @@ function Banner() {
         const request = await axios.get(requests.fetchNetflixOriginals);
         // Pick a random movie from results
         const movies = request.data.results;
-        console.log(request)
+     
         setMovie(movies[Math.floor(Math.random() * movies.length)]);
       } catch (error) {
         console.log("Something went wrong", error);
@@ -20,6 +20,7 @@ function Banner() {
 
     fetchData();
   }, []);
+ 
 function truncate(str,n){ 
 
     return str?.length>n ? str.substr(0,n-1)+'....':str
